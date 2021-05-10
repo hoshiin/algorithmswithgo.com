@@ -25,5 +25,16 @@ package module01
 //   Fibonacci(14) => 377
 //
 func Fibonacci(n int) int {
-	return 0
+	if n <= 1 {
+		return n
+	}
+	iVal := 0
+	jVal := 1
+	curVal := 0
+	for i := 1; i < n; i++ {
+		curVal = iVal + jVal
+		iVal = jVal
+		jVal = curVal
+	}
+	return curVal
 }
